@@ -3,27 +3,19 @@ PHP class to convert files encoding
 
 ## Usage
 ```php
-construct($encoding_to = 'UTF-8', $encodings_detected = 'UTF-8,ISO-8859-1,WINDOWS-1252');
-EncodeFile($fileR, $fileW, &$encoding_original, &$encoding_final);
+EncodeFile($fileR, $encoding_to, $encodings_detected);
 ```
 
 This is an example:
 
 ```php
-include 'src/codification.php';
-
 $codification = new Codification();
 
-$fileR = "file.txt";
-$fileW = 'encodedFile.txt;
-$encoding_original = "";
-$encoding_final = "";
+$fileR = 'file.txt';
+$encoding_to = 'UTF-8';
+$encodings_detected = 'UTF-8,ISO-8859-1,WINDOWS-1252';
 
-$result = $codification->EncodeFile($fileR, $fileW, $encoding_original, $encoding_final);
-
-($result) ? 'True' : 'False';
-echo "Original encoding: " . $encoding_original;
-echo "Final encoding: " . $encoding_final;
+$result = $codification->EncodeFile($fileR, $encoding_to, $encodings_detected);
 ```
 
 ## Encoding values

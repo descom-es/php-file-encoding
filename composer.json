@@ -1,10 +1,10 @@
 {
-    "name": "descom/php-codification",
+    "name": "Descom/File_Encoding",
     "description": "PHP class to encode files",
     "type": "library",
     "license": "MIT",
     "keywords": ["php", "encoding", "encode", "convert file encoding", "UTF-8", "ISO-8859-1"],
-    "homepage": "https://www.descomsms.com",
+    "homepage": "https://www.descom.es",
     "authors": [
         {
             "name": "Juan José Llorens",
@@ -16,7 +16,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Descom\\Codification\\": "src/"
+            "Descom\\File_Encoding\\": "src"
         }
     },
     "require-dev": {
@@ -24,7 +24,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Descom\\Codification\\Test\\": "tests"
+            "Descom\\File_Encoding\\Test\\": "tests"
         }
     },
     "scripts": {
