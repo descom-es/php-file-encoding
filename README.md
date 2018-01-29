@@ -1,3 +1,4 @@
+[![StyleCI](https://styleci.io/repos/119397036/shield)](https://styleci.io/repos/119397036)
 # PHP convert files encoding
 PHP class to convert files encoding
 
