@@ -1,4 +1,5 @@
 <?php
+
 namespace Descom\File_Encoding;
 
 class FileEncoding
@@ -6,9 +7,9 @@ class FileEncoding
     /**
      * Encode file.
      *
-     * @param string $fileR              Original file
-     * @param string &$encoding_to       Encoding to encode file
-     * @param string &$encodings_detected    Ordered list of encodings
+     * @param string $fileR               Original file
+     * @param string &$encoding_to        Encoding to encode file
+     * @param string &$encodings_detected Ordered list of encodings
      *
      * @return bool
      */
@@ -28,24 +29,24 @@ class FileEncoding
                     fclose($handleW);
                     unlink($file);
                     rename($fileW, $file);
-
-                }
-                else{
+                } else {
                     fclose($handleR);
                     fclose($handleW);
+
                     return false;
                 }
             } catch (Exception $e) {
                 return false;
             }
         }
+
         return $this->checkEncoding($file, $encoding_to);
     }
 
     /**
      * Detect file encoding.
      *
-     * @param string $fileR Original file
+     * @param string $fileR              Original file
      * @param string $encodings_detected Ordered list of encodings
      *
      * @return string File encoding
@@ -59,14 +60,16 @@ class FileEncoding
                 $encoding = mb_detect_encoding($line, $encodings_detected, true);
                 if ($encoding != $encodings[0]) {
                     fclose($handleR);
+
                     return $encoding;
                 }
             }
             fclose($handleR);
+
             return $encodings[0];
-        }
-        else
+        } else {
             return '';
+        }
     }
 
     /**
@@ -84,13 +87,14 @@ class FileEncoding
             while ($line = fgets($handleR, 4096)) {
                 if (!mb_check_encoding($line, $encoding_to)) {
                     fclose($handleR);
+
                     return false;
                 }
             }
             fclose($handleR);
-        }
-        else
+        } else {
             return false;
+        }
 
         return true;
     }
