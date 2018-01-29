@@ -3,7 +3,7 @@ PHP class to convert files encoding
 
 ## Usage
 ```php
-construct($encoding_to = 'UTF-8', $encodings_detected = 'UTF-8,ISO-8859-1,WINDOWS-1252');
+__construct($encoding_to = 'UTF-8', $encodings_detected = 'UTF-8,ISO-8859-1,WINDOWS-1252');
 EncodeFile($fileR, $fileW, &$encoding_original, &$encoding_final);
 ```
 
