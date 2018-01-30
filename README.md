@@ -20,8 +20,8 @@ encodeFile($file, $encoding_to, $encodings_detected);
 This is an example:
 
 ```php
+use Descom\File\Encoding;
 
-use Descom\File\Encoding
 $codification = new Encoding();
 
 $file = 'file.txt';
