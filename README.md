@@ -1,11 +1,20 @@
 [![StyleCI](https://styleci.io/repos/119397036/shield)](https://styleci.io/repos/119397036)
 [![Build Status](https://travis-ci.org/descom-es/php-file-encoding.svg?branch=1.0)](https://travis-ci.org/descom-es/php-file-encoding)
+
 # PHP convert files encoding
 PHP class to convert files encoding
 
+## Installation
+
+You can install it with composer:
+
+```bash
+composer require descom/file_encoding
+```
+
 ## Usage
 ```php
-Encoding($file, $encoding_to, $encodings_detected);
+encodeFile($file, $encoding_to, $encodings_detected);
 ```
 
 This is an example:
