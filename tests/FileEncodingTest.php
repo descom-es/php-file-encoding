@@ -1,6 +1,6 @@
 <?php
-namespace Descom\File_Encoding\Test;
-use Descom\File_Encoding\FileEncoding;
+namespace Descom\FileEncoding\Test;
+use Descom\FileEncoding;
 
 class FileEncodingTest extends TestCase
 {
@@ -32,6 +32,6 @@ class FileEncodingTest extends TestCase
     {
         $encoding = new FileEncoding();
         $result = FileEncoding->encodeFile('test.txt');
-        $this->assertTrue(!$result);
+        $this->assertFalse($result);
     }
 }
