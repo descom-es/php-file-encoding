@@ -27,6 +27,7 @@ class Encoding
                         if (fwrite($handleW, mb_convert_encoding($line, $encoding_to, $encoding_original), 4096) === false) {
                             fclose($handleR);
                             fclose($handleW);
+                            unlink($fileW);
 
                             return false;
                         }
@@ -34,12 +35,18 @@ class Encoding
                     fclose($handleR);
                     fclose($handleW);
                     if (rename($fileW, $file) === false) {
+                        unlink($fileW);
+
                         return false;
                     }
                 } else {
                     return false;
                 }
             } catch (Exception $e) {
+                if (file_exits($fileW)) {
+                    unlink($fileW);
+                }
+
                 return false;
             }
         }

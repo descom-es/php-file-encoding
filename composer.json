@@ -1,5 +1,5 @@
 {
-    "name": "Descom/File_Encoding",
+    "name": "descom/file_encoding",
     "description": "PHP class to encode files",
     "type": "library",
     "license": "MIT",
