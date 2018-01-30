@@ -36,6 +36,7 @@ class Encoding
                     fclose($handleW);
                     if (rename($fileW, $file) === false) {
                         unlink($fileW);
+
                         return false;
                     }
                 } else {
@@ -45,7 +46,7 @@ class Encoding
                 if (file_exits($fileW)) {
                     unlink($fileW);
                 }
-                
+
                 return false;
             }
         }
