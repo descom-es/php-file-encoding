@@ -86,12 +86,14 @@ class FileEncoding
             while ($line = fgets($handleR, 4096)) {
                 if (!mb_check_encoding($line, $encoding_to)) {
                     fclose($handleR);
+
                     return false;
                 }
             }
             fclose($handleR);
-        } else
+        } else {
             return false;
+        }
 
         return true;
     }
