@@ -27,7 +27,7 @@ class FileEncodingTest extends TestCase
 
         $this->assertTrue($encoding->detectEncoding(__DIR__.'/files/iso88591.txt', 'UTF-8,ISO-8859-1,WINDOWS-1252') == 'ISO-8859-1');
         $this->assertTrue($encoding->encodeFile(__DIR__.'/files/iso88591.txt', 'UTF-8', 'UTF-8,ISO-8859-1,WINDOWS-1252'));
-        $this->assertTrue($encoding->checkEncoding(__DIR__.'/files/iso88591.txt','UTF-8'));
+        $this->assertTrue($encoding->checkEncoding(__DIR__.'/files/iso88591.txt', 'UTF-8'));
 
         $this->close();
     }
@@ -38,7 +38,7 @@ class FileEncodingTest extends TestCase
         $encoding = new Encoding();
         $this->assertTrue($encoding->detectEncoding('tests/files/utf8.txt', 'UTF-8,ISO-8859-1,WINDOWS-1252') == 'UTF-8');
         $this->assertTrue($result = $encoding->encodeFile('tests/files/utf8.txt'));
-        $this->assertTrue($encoding->checkEncoding('tests/files/utf8.txt','UTF-8'));
+        $this->assertTrue($encoding->checkEncoding('tests/files/utf8.txt', 'UTF-8'));
 
         $this->close();
     }
@@ -49,7 +49,7 @@ class FileEncodingTest extends TestCase
         $encoding = new Encoding();
         $this->assertFalse($encoding->detectEncoding('tests/files/test.txt', 'UTF-8,ISO-8859-1,WINDOWS-1252') == 'UTF-8');
         $this->assertFalse($result = $encoding->encodeFile('tests/files/test.txt'));
-        $this->assertFalse($encoding->checkEncoding('tests/files/test.txt','UTF-8'));
+        $this->assertFalse($encoding->checkEncoding('tests/files/test.txt', 'UTF-8'));
 
         $this->close();
     }

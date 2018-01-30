@@ -16,7 +16,7 @@ class Encoding
     public function encodeFile($file, $encoding_to = 'UTF-8', $encodings_detected = 'UTF-8,ISO-8859-1,WINDOWS-1252')
     {
         $encoding_original = $this->detectEncoding($file, $encodings_detected);
-        
+
         if ($encoding_original !== false && $encoding_original != $encoding_to) {
             try {
                 $fileW = $file.'.tmp';
@@ -27,6 +27,7 @@ class Encoding
                         if (fwrite($handleW, mb_convert_encoding($line, $encoding_to, $encoding_original), 4096) === false) {
                             fclose($handleR);
                             fclose($handleW);
+
                             return false;
                         }
                     }
@@ -49,7 +50,7 @@ class Encoding
     /**
      * Detect file encoding.
      *
-     * @param string $file              Original file
+     * @param string $file               Original file
      * @param string $encodings_detected Ordered list of encodings
      *
      * @return mixed String encoding or false
