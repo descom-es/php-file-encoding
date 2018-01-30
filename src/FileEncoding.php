@@ -1,6 +1,6 @@
 <?php
 
-namespace Descom\File_Encoding;
+namespace Descom\FileEncoding;
 
 class FileEncoding
 {
@@ -27,7 +27,6 @@ class FileEncoding
                     }
                     fclose($handleR);
                     fclose($handleW);
-                    unlink($file);
                     rename($fileW, $file);
                 } else {
                     fclose($handleR);
@@ -87,14 +86,12 @@ class FileEncoding
             while ($line = fgets($handleR, 4096)) {
                 if (!mb_check_encoding($line, $encoding_to)) {
                     fclose($handleR);
-
                     return false;
                 }
             }
             fclose($handleR);
-        } else {
+        } else
             return false;
-        }
 
         return true;
     }
