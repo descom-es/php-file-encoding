@@ -44,12 +44,22 @@ class FileEncodingTest extends TestCase
     }
 
     /** @test */
-    public function test_encoding_file_not_exists()
+    public function test_file_not_exists()
     {
         $encoding = new Encoding();
         $this->assertFalse($encoding->detectEncoding('tests/files/test.txt', 'UTF-8,ISO-8859-1,WINDOWS-1252') == 'UTF-8');
         $this->assertFalse($result = $encoding->encodeFile('tests/files/test.txt'));
         $this->assertFalse($encoding->checkEncoding('tests/files/test.txt', 'UTF-8'));
+
+        $this->close();
+    }
+
+    /** @test */
+    public function test_encoding_file_not_exists_in_encodings_detected()
+    {
+        $encoding = new Encoding();
+        $this->assertFalse($encoding->encodeFile(__DIR__.'/files/iso88591.txt', 'UTF-8', 'UTF-8,WINDOWS-1252'));
+        $this->assertFalse($encoding->checkEncoding(__DIR__.'/files/iso88591.txt', 'UTF-8'));
 
         $this->close();
     }
