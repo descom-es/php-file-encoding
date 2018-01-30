@@ -1,5 +1,7 @@
 <?php
+
 namespace Descom\FileEncoding\Test;
+
 use Descom\FileEncoding;
 
 class FileEncodingTest extends TestCase
