@@ -8,7 +8,11 @@
     "authors": [
         {
             "name": "Juan José Llorens",
-            "email": "llorensjj@gmail.com"
+            "email": "juanjo@descom.es"
+        },
+        {
+            "name": "Cesar Garcia",
+            "email": "cesar@descom.es"
         }
     ],
     "require": {
